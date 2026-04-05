@@ -1,0 +1,460 @@
+/* ================================================================
+   MUSIKFREUNDE BREGENZ — Hauptstylesheet
+   Farbwelt: Schwarz #1C1C1C · Rot #B5192E · Creme #F7F6F2
+   Schriften: Playfair Display (Serif) · Inter (Sans)
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── Custom Properties ── */
+:root {
+  --red:        #B5192E;
+  --red-dark:   #8C1323;
+  --text:       #1C1C1C;
+  --muted:      #6A6A6A;
+  --bg:         #FFFFFF;
+  --bg-warm:    #F7F6F2;
+  --bg-dark:    #141414;
+  --border:     #E2DFD9;
+  --serif:      'Playfair Display', Georgia, serif;
+  --sans:       'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-w:      1180px;
+  --pad-x:      clamp(1.25rem, 5vw, 3rem);
+  --section:    clamp(4rem, 8vw, 7rem);
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.75; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ── Typografie ── */
+h1, h2, h3, h4 { font-family: var(--serif); line-height: 1.15; font-weight: 700; }
+h1 { font-size: clamp(2.4rem, 5.5vw, 4.25rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.75rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.65rem); }
+h4 { font-size: 1.05rem; font-weight: 600; font-family: var(--sans); }
+p  { font-size: clamp(0.9375rem, 1.5vw, 1.0625rem); max-width: 65ch; }
+
+/* ── Layout ── */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x); }
+.section    { padding: var(--section) 0; }
+.section--warm { background: var(--bg-warm); }
+.section--dark { background: var(--bg-dark); color: #fff; }
+
+/* ================================================================
+   NAVIGATION
+   ================================================================ */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.nav__inner {
+  max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x);
+  height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+}
+.nav__logo {
+  font-family: var(--serif); font-size: 1.05rem; font-weight: 700;
+  color: var(--text); letter-spacing: 0.01em; line-height: 1.15; flex-shrink: 0;
+}
+.nav__logo span {
+  display: block; font-size: 0.66rem; font-family: var(--sans); font-weight: 400;
+  color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase;
+}
+.nav__links { display: flex; gap: 0.1rem; list-style: none; align-items: center; }
+.nav__links a {
+  font-size: 0.85rem; font-weight: 500; color: var(--muted); padding: 0.4rem 0.7rem;
+  border-radius: 3px; transition: color 0.18s; letter-spacing: 0.015em;
+}
+.nav__links a:hover,
+.nav__links a.active { color: var(--text); }
+.nav__cta a {
+  background: var(--red) !important; color: #fff !important;
+  padding: 0.45rem 1rem !important; border-radius: 3px; font-weight: 600 !important;
+  font-size: 0.85rem !important; margin-left: 0.5rem;
+}
+.nav__cta a:hover { background: var(--red-dark) !important; }
+.nav__toggle {
+  display: none; background: none; border: none; cursor: pointer;
+  padding: 0.5rem; flex-direction: column; gap: 5px;
+}
+.nav__toggle span { display: block; width: 22px; height: 2px; background: var(--text); transition: 0.3s; }
+
+@media (max-width: 880px) {
+  .nav__toggle { display: flex; }
+  .nav__links {
+    display: none; position: absolute; top: 68px; left: 0; right: 0; background: #fff;
+    flex-direction: column; padding: 1.25rem var(--pad-x) 1.75rem;
+    border-bottom: 1px solid var(--border); gap: 0.15rem; align-items: flex-start;
+  }
+  .nav__links.open { display: flex; }
+  .nav__links a { padding: 0.55rem 0; font-size: 1rem; }
+  .nav__cta { margin-top: 0.5rem; }
+  .nav__cta a { display: inline-block; margin-left: 0 !important; }
+}
+
+/* ================================================================
+   HERO — STARTSEITE
+   ================================================================ */
+.hero {
+  min-height: 88vh; display: flex; align-items: flex-end;
+  background: var(--bg-dark); position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(145deg, #0a0a0a 0%, #1a0808 55%, #120606 100%);
+}
+.hero::after {
+  content: ''; position: absolute; top: 0; right: 0; width: 45%; height: 100%;
+  background: linear-gradient(to left, rgba(181,25,46,0.07), transparent);
+  pointer-events: none;
+}
+.hero__deco {
+  position: absolute; bottom: -4rem; right: -2rem;
+  font-family: var(--serif); font-size: 28rem; font-weight: 700; line-height: 1;
+  color: rgba(255,255,255,0.025); pointer-events: none; user-select: none;
+}
+.hero__content {
+  position: relative; z-index: 1; max-width: var(--max-w); width: 100%;
+  margin: 0 auto; padding: 8rem var(--pad-x) 6rem;
+}
+.hero__eyebrow {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 1.5rem; display: block;
+}
+.hero__title {
+  font-size: clamp(3rem, 7vw, 5.75rem); color: #fff; line-height: 1.05;
+  max-width: 13ch; margin-bottom: 1.75rem; font-weight: 700;
+}
+.hero__title em { font-style: italic; color: rgba(255,255,255,0.6); }
+.hero__sub {
+  font-size: clamp(1rem, 2vw, 1.125rem); color: rgba(255,255,255,0.6);
+  max-width: 46ch; margin-bottom: 2.75rem; line-height: 1.75;
+}
+.hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+.hero__badge {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 3px; padding: 0.7rem 1.2rem; color: rgba(255,255,255,0.75);
+  font-size: 0.875rem; line-height: 1.5;
+}
+.hero__badge strong { display: block; color: #fff; font-weight: 600; font-size: 0.95rem; }
+
+/* ================================================================
+   BUTTONS
+   ================================================================ */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.875rem 2rem; border-radius: 3px; font-family: var(--sans);
+  font-size: 0.9rem; font-weight: 600; letter-spacing: 0.025em;
+  cursor: pointer; transition: all 0.18s; border: 2px solid transparent; text-decoration: none;
+}
+.btn--primary  { background: var(--red); color: #fff; }
+.btn--primary:hover { background: var(--red-dark); color: #fff; }
+.btn--ghost    { background: transparent; border-color: rgba(255,255,255,0.28); color: #fff; }
+.btn--ghost:hover { border-color: rgba(255,255,255,0.65); color: #fff; }
+.btn--outline  { background: transparent; border-color: var(--border); color: var(--text); }
+.btn--outline:hover { border-color: var(--text); }
+.btn--white    { background: #fff; color: var(--red); border-color: #fff; }
+.btn--white:hover { background: rgba(255,255,255,0.9); color: var(--red-dark); }
+.btn--sm       { padding: 0.55rem 1.25rem; font-size: 0.82rem; }
+
+/* ================================================================
+   SEKTIONS-KOPF
+   ================================================================ */
+.sec-head { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+.sec-head--center { text-align: center; }
+.sec-head--center .sec-lead { margin-left: auto; margin-right: auto; }
+.sec-eye {
+  display: inline-block; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 0.75rem;
+}
+.sec-title { color: var(--text); margin-bottom: 0.875rem; }
+.sec-lead { font-size: clamp(1rem, 1.8vw, 1.1rem); color: var(--muted); max-width: 52ch; }
+
+/* ================================================================
+   STARTSEITE – KONZERT-TEASER
+   ================================================================ */
+.concert-teaser {
+  display: grid; grid-template-columns: 3fr 2fr;
+  border: 1px solid var(--border); background: var(--bg-warm);
+}
+@media (max-width: 720px) { .concert-teaser { grid-template-columns: 1fr; } }
+
+.concert-teaser__body { padding: clamp(2rem, 5vw, 3.5rem); }
+.concert-teaser__date {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--red); margin-bottom: 0.3rem;
+}
+.concert-teaser__venue { font-size: 0.875rem; color: var(--muted); margin-bottom: 2rem; }
+.concert-teaser__title {
+  font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 2rem);
+  margin-bottom: 2rem; line-height: 1.2;
+}
+.prog-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; margin-bottom: 2.25rem; }
+.prog-list li { display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; align-items: baseline; }
+.prog-cmp { font-weight: 600; font-size: 0.875rem; white-space: nowrap; color: var(--text); }
+.prog-wrk { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--muted); }
+.concert-teaser__vis {
+  background: linear-gradient(145deg, #120808 0%, #200e0e 100%);
+  min-height: 280px; display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.concert-teaser__vis-text {
+  font-family: var(--serif); font-size: 9rem; font-weight: 700;
+  color: rgba(181,25,46,0.12); user-select: none; line-height: 1;
+}
+
+/* ================================================================
+   STARTSEITE – ÜBER-UNS KARTEN
+   ================================================================ */
+.about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+@media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; gap: 2rem; } }
+@media (min-width: 721px) and (max-width: 920px) { .about-grid { grid-template-columns: 1fr 1fr; } }
+
+.about-card { border-top: 2px solid var(--border); padding-top: 2rem; }
+.about-card:first-child { border-top-color: var(--red); }
+.about-card__num { font-family: var(--serif); font-size: 2.75rem; font-weight: 700; color: var(--red); line-height: 1; margin-bottom: 0.75rem; }
+.about-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.about-card p { font-size: 0.9375rem; color: var(--muted); line-height: 1.75; }
+.about-card__link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  margin-top: 1.25rem; font-size: 0.875rem; font-weight: 600; color: var(--red);
+  transition: gap 0.18s;
+}
+.about-card__link:hover { gap: 0.7rem; }
+
+/* ================================================================
+   STARTSEITE – PRESSEZITAT (dunkel)
+   ================================================================ */
+.quote-wrap { max-width: 740px; margin: 0 auto; text-align: center; }
+.quote-wrap__mark { font-family: var(--serif); font-size: 6rem; color: var(--red); line-height: 0.5; display: block; margin-bottom: 2rem; }
+.quote-wrap__text {
+  font-family: var(--serif); font-size: clamp(1.3rem, 3vw, 1.95rem);
+  font-style: italic; color: rgba(255,255,255,0.88); line-height: 1.55; margin-bottom: 1.5rem;
+}
+.quote-wrap__src { font-size: 0.78rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.38); text-transform: uppercase; }
+
+/* ================================================================
+   STARTSEITE – MITMACHEN BANNER
+   ================================================================ */
+.mitmachen-banner { background: var(--red); }
+.mitmachen-banner__inner {
+  max-width: var(--max-w); margin: 0 auto; padding: clamp(3rem, 6vw, 5rem) var(--pad-x);
+  display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center;
+}
+@media (max-width: 620px) { .mitmachen-banner__inner { grid-template-columns: 1fr; } }
+.mitmachen-banner h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: #fff; margin-bottom: 0.5rem; }
+.mitmachen-banner p  { color: rgba(255,255,255,0.8); font-size: 1rem; max-width: 48ch; }
+
+/* ================================================================
+   SPONSOREN
+   ================================================================ */
+.sponsors-row { display: flex; flex-wrap: wrap; gap: 0.875rem 1.25rem; margin-top: 2rem; align-items: center; }
+.sponsor-item {
+  font-size: 0.9rem; color: var(--muted); padding: 0.5rem 1rem;
+  border: 1px solid var(--border); border-radius: 3px; transition: border-color 0.18s, color 0.18s;
+}
+.sponsor-item:hover { border-color: var(--text); color: var(--text); }
+
+/* ================================================================
+   NEWSLETTER
+   ================================================================ */
+.newsletter-wrap {
+  max-width: var(--max-w); margin: 0 auto; padding: clamp(3.5rem, 7vw, 5.5rem) var(--pad-x);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+}
+@media (max-width: 700px) { .newsletter-wrap { grid-template-columns: 1fr; gap: 2rem; } }
+.newsletter-wrap h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 0.75rem; }
+.newsletter-wrap p  { color: var(--muted); font-size: 0.9375rem; }
+.nl-form { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.nl-form input {
+  flex: 1; min-width: 200px; padding: 0.875rem 1.1rem;
+  border: 1px solid var(--border); border-radius: 3px; font-family: var(--sans);
+  font-size: 0.9375rem; background: #fff; color: var(--text); outline: none; transition: border-color 0.18s;
+}
+.nl-form input:focus { border-color: var(--red); }
+.nl-form input::placeholder { color: #bbb; }
+.nl-note { font-size: 0.78rem; color: var(--muted); margin-top: 0.75rem; }
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+.footer { background: var(--bg-dark); padding: clamp(3rem, 6vw, 5rem) var(--pad-x) 2rem; }
+.footer__inner { max-width: var(--max-w); margin: 0 auto; }
+.footer__grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+@media (max-width: 860px)  { .footer__grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+@media (max-width: 480px)  { .footer__grid { grid-template-columns: 1fr; gap: 1.75rem; } }
+.footer__brand { font-family: var(--serif); font-size: 1.1rem; color: #fff; font-weight: 700; margin-bottom: 0.5rem; }
+.footer__sub   { font-size: 0.825rem; color: rgba(255,255,255,0.42); line-height: 1.7; margin-bottom: 1.5rem; }
+.footer__social { display: flex; gap: 1.25rem; }
+.footer__social a { font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.45); transition: color 0.18s; }
+.footer__social a:hover { color: #fff; }
+.footer__col h4 {
+  font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1.25rem;
+}
+.footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer__col a  { font-size: 0.875rem; color: rgba(255,255,255,0.6); transition: color 0.18s; }
+.footer__col a:hover { color: #fff; }
+.footer__bottom {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;
+  padding-top: 2rem; font-size: 0.775rem; color: rgba(255,255,255,0.28);
+}
+.footer__bottom a { color: rgba(255,255,255,0.28); }
+.footer__bottom a:hover { color: rgba(255,255,255,0.55); }
+
+/* ================================================================
+   SEITEN-HERO (Unterseiten)
+   ================================================================ */
+.page-hero { background: var(--bg-dark); padding: clamp(4.5rem, 9vw, 7.5rem) var(--pad-x) clamp(3rem, 5vw, 4.5rem); }
+.page-hero__inner { max-width: var(--max-w); margin: 0 auto; }
+.page-hero__crumb { display: flex; gap: 0.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-bottom: 1.75rem; }
+.page-hero__crumb a { color: rgba(255,255,255,0.35); }
+.page-hero__crumb a:hover { color: rgba(255,255,255,0.65); }
+.page-hero__crumb span { color: rgba(255,255,255,0.18); }
+.page-hero__eye { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 0.875rem; display: block; }
+.page-hero__h1 { font-size: clamp(2.25rem, 5.5vw, 3.75rem); color: #fff; max-width: 16ch; line-height: 1.1; margin-bottom: 1.25rem; }
+.page-hero__lead { font-size: clamp(1rem, 2vw, 1.1rem); color: rgba(255,255,255,0.6); max-width: 50ch; line-height: 1.75; }
+
+/* ================================================================
+   KONZERT-SEITE
+   ================================================================ */
+.c-meta {
+  background: var(--bg-warm); border: 1px solid var(--border);
+  padding: clamp(2rem, 4vw, 2.75rem); margin-bottom: 3rem;
+}
+.c-meta__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem 2.5rem; margin-bottom: 2rem; }
+.c-meta__item label { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem; }
+.c-meta__item strong { font-size: 1.05rem; font-weight: 600; display: block; }
+.c-meta__item span { font-size: 0.875rem; color: var(--muted); }
+.ticket-bar { display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center; padding-top: 2rem; border-top: 1px solid var(--border); }
+.ticket-price { font-family: var(--serif); font-size: 1.65rem; font-weight: 700; }
+.ticket-price small { font-family: var(--sans); font-size: 0.85rem; font-weight: 400; color: var(--muted); }
+
+.prog-item { border-top: 1px solid var(--border); padding: 1.875rem 0; }
+.prog-item:last-of-type { border-bottom: 1px solid var(--border); }
+.prog-item__cmp { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+.prog-item__wrk { font-family: var(--serif); font-size: 1.45rem; font-style: italic; color: var(--text); margin-bottom: 0.35rem; }
+.prog-item__sub { font-size: 0.9rem; color: var(--muted); }
+.prog-item__solist { font-size: 0.875rem; color: var(--text); margin-top: 0.5rem; }
+.prog-item__solist strong { color: var(--red); font-weight: 600; }
+
+.solist-card {
+  display: grid; grid-template-columns: 110px 1fr; gap: 2rem;
+  padding: 2rem; background: var(--bg-warm); border: 1px solid var(--border);
+}
+@media (max-width: 500px) { .solist-card { grid-template-columns: 1fr; gap: 1.25rem; } }
+.solist-card__img {
+  width: 110px; height: 110px; border-radius: 50%;
+  background: var(--border); display: flex; align-items: center;
+  justify-content: center; font-size: 0.72rem; color: var(--muted);
+  text-align: center; overflow: hidden; flex-shrink: 0;
+}
+.solist-card__role { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 0.25rem; }
+.solist-card__name { font-family: var(--serif); font-size: 1.4rem; margin-bottom: 0.75rem; }
+.solist-card__bio  { font-size: 0.9375rem; color: var(--muted); line-height: 1.75; }
+
+.next-box { background: var(--bg-warm); border: 1px solid var(--border); padding: 2rem; margin-top: 3rem; }
+.next-box__lbl { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+.next-box__date { font-family: var(--serif); font-size: 1.6rem; color: var(--red); margin-bottom: 0.25rem; }
+.next-box__info { font-family: var(--serif); font-style: italic; color: var(--muted); font-size: 1rem; }
+
+/* ================================================================
+   VEREIN-SEITE
+   ================================================================ */
+.prose h3 { font-size: 1.45rem; margin-bottom: 0.875rem; margin-top: 2.75rem; }
+.prose h3:first-child { margin-top: 0; }
+.prose p  { color: var(--muted); margin-bottom: 1rem; }
+
+.vorstand-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.vorstand-card { padding: 1.5rem; border: 1px solid var(--border); }
+.vorstand-card__role { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--red); margin-bottom: 0.4rem; }
+.vorstand-card__name { font-family: var(--serif); font-size: 1.1rem; }
+
+/* ================================================================
+   ORCHESTER-SEITE
+   ================================================================ */
+.register-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2rem; margin-top: 2rem; }
+.register-block h3 { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.register-block ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+.register-block li { font-size: 0.9375rem; color: var(--muted); }
+
+.musicians-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.musician-card__photo {
+  width: 100%; aspect-ratio: 1 / 1; background: var(--bg-warm); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 0.875rem;
+  overflow: hidden; position: relative; font-size: 0.72rem; color: var(--muted); text-align: center; padding: 1rem;
+}
+.musician-card__name { font-family: var(--serif); font-size: 1.05rem; margin-bottom: 0.15rem; }
+.musician-card__inst { font-size: 0.85rem; color: var(--muted); }
+
+/* ================================================================
+   MITMACHEN-SEITE
+   ================================================================ */
+.proben-box { background: var(--bg-warm); border: 1px solid var(--border); padding: 2rem; margin-top: 2rem; }
+.proben-box h3 { margin-bottom: 1.5rem; }
+.proben-row { display: grid; grid-template-columns: 160px 1fr; gap: 1rem; padding: 0.875rem 0; border-top: 1px solid var(--border); font-size: 0.9375rem; }
+.proben-row:last-child { border-bottom: 1px solid var(--border); }
+.proben-row dt { font-weight: 600; }
+.proben-row dd { color: var(--muted); }
+.instr-note { margin-top: 2rem; padding: 1.75rem 2rem; border-left: 3px solid var(--red); background: var(--bg-warm); }
+.instr-note h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+.instr-note p  { font-size: 0.9375rem; color: var(--muted); }
+
+/* ================================================================
+   ARCHIV-SEITE
+   ================================================================ */
+.archiv-list { display: flex; flex-direction: column; }
+.archiv-item { display: grid; grid-template-columns: 200px 1fr auto; gap: 2rem; align-items: baseline; border-top: 1px solid var(--border); padding: 1.75rem 0; }
+.archiv-item:last-child { border-bottom: 1px solid var(--border); }
+@media (max-width: 720px) { .archiv-item { grid-template-columns: 1fr; gap: 0.35rem; } }
+.archiv-item__date { font-size: 0.875rem; color: var(--muted); font-weight: 500; }
+.archiv-item__prog { font-family: var(--serif); font-style: italic; font-size: 1.05rem; }
+.archiv-item__prog em { display: block; font-style: normal; font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
+.archiv-item__venue { font-size: 0.85rem; color: var(--muted); text-align: right; white-space: nowrap; }
+@media (max-width: 720px) { .archiv-item__venue { text-align: left; } }
+
+/* ================================================================
+   PRESSE-SEITE
+   ================================================================ */
+.presse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+@media (max-width: 700px) { .presse-grid { grid-template-columns: 1fr; } }
+.presse-card { padding: 2rem; border: 1px solid var(--border); }
+.presse-card__qm { font-family: var(--serif); font-size: 4rem; color: var(--red); line-height: 0.6; display: block; margin-bottom: 1.25rem; }
+.presse-card__text { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--text); line-height: 1.65; margin-bottom: 1.25rem; }
+.presse-card__src  { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+/* ================================================================
+   KONTAKT-SEITE
+   ================================================================ */
+.kontakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+@media (max-width: 700px) { .kontakt-grid { grid-template-columns: 1fr; gap: 2rem; } }
+.kontakt-block h3 { font-size: 1.2rem; padding-bottom: 0.875rem; border-bottom: 1px solid var(--border); margin-bottom: 1.75rem; }
+.k-item { margin-bottom: 1.5rem; }
+.k-item label { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem; }
+.k-item a { color: var(--red); }
+.k-item a:hover { text-decoration: underline; }
+
+/* ================================================================
+   UTILITIES
+   ================================================================ */
+.divider { height: 1px; background: var(--border); margin: 3rem 0; }
+.ph {
+  display: inline; background: rgba(181,25,46,0.09); color: #8a1020;
+  font-size: 0.82em; padding: 0.08em 0.3em; border-radius: 2px; font-style: italic;
+}
+.skip-link {
+  position: absolute; top: -100px; left: 1rem; background: var(--red); color: #fff;
+  padding: 0.5rem 1rem; z-index: 9999; border-radius: 3px; font-size: 0.875rem;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 1rem; }
+.two-col { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; }
+@media (max-width: 860px) { .two-col { grid-template-columns: 1fr; gap: 2.5rem; } }

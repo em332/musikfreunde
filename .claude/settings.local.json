@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.musikfreunde-bregenz.at)",
+      "Bash(wc -l /Users/ai-sandbox/claude-sandbox/musikfreunde/css/style.css /Users/ai-sandbox/claude-sandbox/musikfreunde/*.html)"
+    ]
+  }
+}
