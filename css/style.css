@@ -6,6 +6,56 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
 
+/* ── Photo images inside containers ── */
+.solist-card__img img,
+.musician-card__photo img,
+.profile-img img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.profile-img {
+  width: 200px; height: 200px; border-radius: 50%;
+  overflow: hidden; flex-shrink: 0; background: var(--border);
+}
+.profile-header {
+  display: grid; grid-template-columns: 220px 1fr; gap: 3rem; align-items: start;
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 640px) {
+  .profile-header { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+.profile-header__role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); margin-bottom: 0.35rem; }
+.profile-header__name { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 2.25rem); margin-bottom: 0.5rem; }
+.profile-header__sub  { font-size: 0.9375rem; color: var(--muted); }
+
+/* Register list highlight */
+.register-lead { font-weight: 600; color: var(--text); }
+.register-lead span { font-size: 0.8rem; font-weight: 400; color: var(--red); margin-left: 0.4rem; }
+.in-memoriam { color: var(--muted); font-style: italic; font-size: 0.9rem; }
+.in-memoriam span { font-size: 0.75rem; color: var(--red); margin-left: 0.3rem; }
+
+/* Press list (archive style) */
+.presse-list { display: flex; flex-direction: column; }
+.presse-list-item {
+  display: grid; grid-template-columns: 180px 1fr auto;
+  gap: 2rem; align-items: baseline;
+  border-top: 1px solid var(--border); padding: 1.5rem 0;
+}
+.presse-list-item:last-child { border-bottom: 1px solid var(--border); }
+@media (max-width: 720px) { .presse-list-item { grid-template-columns: 1fr; gap: 0.35rem; } }
+.presse-list-item__date { font-size: 0.85rem; color: var(--muted); font-weight: 500; }
+.presse-list-item__title { font-family: var(--serif); font-size: 1.05rem; color: var(--text); }
+.presse-list-item__source { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+.presse-list-item__pdf { font-size: 0.82rem; font-weight: 600; color: var(--red); white-space: nowrap; }
+.presse-list-item__pdf:hover { text-decoration: underline; }
+
+/* Proben table */
+.proben-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 1.5rem; }
+.proben-table th { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 0.5rem 1rem 0.75rem 0; text-align: left; border-bottom: 1px solid var(--border); }
+.proben-table td { padding: 0.75rem 1rem 0.75rem 0; border-bottom: 1px solid var(--border); color: var(--muted); vertical-align: top; }
+.proben-table td:first-child { font-weight: 600; color: var(--text); white-space: nowrap; }
+.proben-table tr.highlight td { color: var(--text); background: rgba(181,25,46,0.04); }
+.proben-table tr.concert-day td { font-weight: 600; color: var(--red); }
+
 /* ── Custom Properties ── */
 :root {
   --red:        #B5192E;

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Das Orchester der Musikfreunde Bregenz – Musiker, Besetzung und Ensemble-Profil.">
+  <meta name="description" content="Das Orchester der Musikfreunde Bregenz – Dirigent Hansjörg Gruber, Konzertmeister Thomas Furrer und alle Musikerinnen und Musiker.">
   <title>Orchester – Musikfreunde Bregenz</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,10 +13,7 @@
 
 <nav class="nav" aria-label="Hauptnavigation">
   <div class="nav__inner">
-    <a href="index.html" class="nav__logo">
-      Musikfreunde Bregenz
-      <span>Gesellschaft der Musikfreunde</span>
-    </a>
+    <a href="index.html" class="nav__logo">Musikfreunde Bregenz<span>Gesellschaft der Musikfreunde</span></a>
     <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Navigation öffnen">
       <span></span><span></span><span></span>
     </button>
@@ -36,174 +33,195 @@
 
   <header class="page-hero">
     <div class="page-hero__inner">
-      <div class="page-hero__crumb">
-        <a href="index.html">Startseite</a>
-        <span aria-hidden="true">/</span>
-        <span>Orchester</span>
-      </div>
+      <div class="page-hero__crumb"><a href="index.html">Startseite</a><span>/</span><span>Orchester</span></div>
       <span class="page-hero__eye">Das Ensemble</span>
       <h1 class="page-hero__h1">Das Orchester</h1>
-      <p class="page-hero__lead">
-        <span class="ph">[Anzahl]</span> Musikerinnen und Musiker –
-        verbunden durch die Leidenschaft für symphonische Musik
-        und den Anspruch, Konzerte auf hohem Niveau zu gestalten.
-      </p>
+      <p class="page-hero__lead">Rund <span class="ph">[Anzahl]</span> Musikerinnen und Musiker aus Bregenz, ganz Vorarlberg und dem benachbarten Lindau – verbunden durch die Leidenschaft für symphonische Musik.</p>
     </div>
   </header>
 
   <!-- ══════════════════════════════════════════════
-       PROFIL
+       DIRIGENT
   ══════════════════════════════════════════════ -->
-  <section class="section" aria-labelledby="profil-heading">
+  <section class="section" id="dirigent" aria-labelledby="dirigent-heading">
     <div class="container">
-      <div class="two-col">
+      <span class="sec-eye">Musikalische Leitung</span>
+      <h2 class="sec-title" id="dirigent-heading" style="margin-bottom:2.5rem;">Dirigent</h2>
+
+      <div class="profile-header">
+        <div class="profile-img">
+          <img src="http://www.musikfreunde-bregenz.at/wp-content/uploads/2009/02/gruber_41.jpg" alt="Hansjörg Gruber, Dirigent der Musikfreunde Bregenz">
+        </div>
         <div>
-          <span class="sec-eye">Ensemble-Profil</span>
-          <h2 class="sec-title" id="profil-heading">Musik als gemeinsames Erleben</h2>
-          <p style="color:var(--muted); margin-bottom:1rem;">
-            Das Orchester der Musikfreunde Bregenz versteht sich als Laienensemble mit
-            professionellem Anspruch. Die Musikerinnen und Musiker kommen aus ganz Vorarlberg –
-            manche spielen seit Jahrzehnten mit, andere sind neu dazugestossen.
+          <p class="profile-header__role">Dirigent</p>
+          <h3 class="profile-header__name">Hansjörg Gruber</h3>
+          <p class="profile-header__sub" style="margin-bottom:1.5rem;">Mit den Musikfreunden Bregenz seit 2002</p>
+
+          <p style="color:var(--muted);margin-bottom:1rem;">
+            Hansjörg Gruber absolvierte seine Ausbildung am Gymnasium und an der Musikschule in Feldkirch. An der Universität und am Konservatorium in Innsbruck studierte er Musik und Mathematik; seine Klavierausbildung vertiefte er in der Meisterklasse bei Margot Pinter. Das Dirigentendiplom erwarb er bei Edgar Seipenbusch und Robert Nessler.
           </p>
-          <p style="color:var(--muted); margin-bottom:1rem;">
-            <span class="ph">[Weitere Beschreibung des Ensembles – z. B.: Ausbildungshintergrund
-            der Mitglieder, besondere Qualitäten, Verhältnis zu Dirigenten, Probenkultur,
-            besondere Programmschwerpunkte.]</span>
+          <p style="color:var(--muted);margin-bottom:1rem;">
+            Als Lehrbeauftragter für Dirigieren war er an der Pädagogischen Akademie Zams sowie an den Konservatorien Bregenz und Feldkirch tätig. Als Gastprofessor unterrichtete er an der Southern Illinois University in Carbondale (USA). Von 1995 bis 2003 leitete er das Bregenzer und das Landeskonservatorium Feldkirch. Zugleich war er Domkapellmeister in Feldkirch, Leiter der Stadtmusik Vaduz und langjähriger Dirigent des Festspielchors der Bregenzer Festspiele.
           </p>
           <p style="color:var(--muted);">
-            Wir pflegen die symphonische Literatur vom Klassizismus bis zur Romantik und
-            freuen uns über die Möglichkeit, zweimal jährlich vor Bregenzer Publikum
-            aufzutreten – im Frühjahr und im Herbst.
+            Sein erstes Konzert mit der Gesellschaft der Musikfreunde Bregenz dirigierte er im Jahr 2002. Seitdem prägt er das musikalische Profil des Orchesters massgeblich.
           </p>
         </div>
-        <aside style="background:var(--bg-warm); border:1px solid var(--border); padding:2rem; align-self:start;">
-          <h3 style="font-size:0.72rem; font-family:var(--sans); font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem;">Fakten</h3>
-          <div class="k-item"><label>Musiker</label><span><span class="ph">[Anzahl]</span></span></div>
-          <div class="k-item"><label>Konzerte/Jahr</label><span>2</span></div>
-          <div class="k-item"><label>Repertoire</label><span>Klassik &amp; Romantik</span></div>
-          <div class="k-item"><label>Dirigent</label><span><span class="ph">[Name]</span></span></div>
-          <div class="k-item"><label>Probenort</label><span><span class="ph">[Ort, Adresse]</span></span></div>
-          <div style="margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid var(--border);">
-            <a href="mitmachen.html" class="btn btn--primary btn--sm">Jetzt mitspielen</a>
-          </div>
-        </aside>
       </div>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════════
-       BESETZUNG / REGISTER
+       KONZERTMEISTER
   ══════════════════════════════════════════════ -->
-  <section class="section section--warm" aria-labelledby="register-heading">
+  <section class="section section--warm" id="konzertmeister" aria-labelledby="km-heading">
+    <div class="container">
+      <span class="sec-eye">1. Violine</span>
+      <h2 class="sec-title" id="km-heading" style="margin-bottom:2.5rem;">Konzertmeister</h2>
+
+      <div class="profile-header">
+        <div class="profile-img">
+          <img src="http://www.musikfreunde-bregenz.at/wp-content/uploads/2009/02/furrer1.jpg" alt="Thomas Furrer, Konzertmeister">
+        </div>
+        <div>
+          <p class="profile-header__role">Konzertmeister</p>
+          <h3 class="profile-header__name">Thomas Furrer</h3>
+          <p class="profile-header__sub" style="margin-bottom:1.5rem;">geboren 1957 in Wetzikon, Schweiz</p>
+
+          <p style="color:var(--muted);margin-bottom:1rem;">
+            Thomas Furrer studierte von 1977 bis 1982 Violine am Landeskonservatorium für Vorarlberg bei Prof. R. Baldini und schloss 1981 die Staatliche Lehrbefähigung (IGP) ab. Anschliessend setzte er seine Ausbildung von 1982 bis 1987 an der Hochschule für Musik und darstellende Kunst in Graz bei Prof. Chr. Polyzoides fort und legte dort die Konzertreife-Prüfung ab.
+          </p>
+          <p style="color:var(--muted);margin-bottom:1rem;">
+            Von 1983 bis 1987 war er Konzertmeister des Grazer Sinfonieorchesters. Als Lehrkraft an den Musikschulen Hard, Bregenz und Lindau sowie seit 1987 an der Musikschule Dornbirn gibt er seine Erfahrung an junge Musikerinnen und Musiker weiter. Als Solist, Konzertmeister und Kammermusiker ist er im In- und Ausland tätig.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       BESETZUNG
+  ══════════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="besetzung-heading">
     <div class="container">
       <div class="sec-head">
         <span class="sec-eye">Besetzung</span>
-        <h2 class="sec-title" id="register-heading">Register</h2>
-        <p class="sec-lead">
-          Die vollständige Mitgliederliste wird laufend aktualisiert.
-          <span class="ph">[Namen der Mitglieder bitte vom Vorstand einholen und eintragen.]</span>
-        </p>
+        <h2 class="sec-title" id="besetzung-heading">Alle Mitwirkenden</h2>
       </div>
+
       <div class="register-grid">
+
         <div class="register-block">
-          <h3>Streicher</h3>
+          <h3>1. Violine</h3>
           <ul>
-            <li>1. Violine</li>
-            <li>2. Violine</li>
-            <li>Viola</li>
-            <li>Violoncello</li>
-            <li>Kontrabass</li>
+            <li class="register-lead">Thomas Furrer <span>Konzertmeister</span></li>
+            <li>Karl Braun</li>
+            <li>Hilde Rinderer</li>
+            <li>Walter Matt</li>
+            <li>Peter Lissy</li>
+            <li>Angelika Gabriel</li>
+            <li>Margarete Kopf</li>
+            <li>Julia Borchard</li>
+            <li>Ulrike Götz</li>
+            <li>Nele Spiekermann</li>
+            <li>Heike Nagel</li>
+            <li>Christina Bösch</li>
+            <li>Susanne Fischer-Bürster</li>
+            <li class="in-memoriam">Klaus König <span>† in memoriam</span></li>
           </ul>
         </div>
+
+        <div class="register-block">
+          <h3>2. Violine</h3>
+          <ul>
+            <li class="register-lead">Karin Burtscher <span>Stimmführerin</span></li>
+            <li>Karl Schwärzler</li>
+            <li>Julia Bohle</li>
+            <li>Ingeborg Ender</li>
+            <li>Jan Schulz</li>
+            <li>Birgit Marent</li>
+            <li>Stephanie Rieth</li>
+            <li>Josef Lindermayr</li>
+            <li>Dr. Karin Parschalk</li>
+            <li>Birthe Stern</li>
+            <li>Maria Wirth</li>
+            <li>Sonja Fleisch-Felder</li>
+            <li>Monika Lapitz</li>
+            <li>Martina Salchner</li>
+            <li>Nasya Allgaier</li>
+            <li>Nicolas Kruijen</li>
+          </ul>
+        </div>
+
+        <div class="register-block">
+          <h3>Viola</h3>
+          <ul>
+            <li class="register-lead">Angela Rowe <span>Stimmführerin</span></li>
+            <li>Angelika Bucher</li>
+            <li>Ute Hildebrecht</li>
+            <li>Elisabeth Braun</li>
+            <li>Jette Siegers</li>
+            <li>Monika Sperger</li>
+            <li>Sylvia Jungwirth</li>
+          </ul>
+        </div>
+
+        <div class="register-block">
+          <h3>Violoncello</h3>
+          <ul>
+            <li class="register-lead">Monika Brunner-Scherbaum <span>Stimmführerin</span></li>
+            <li>Anita Einsle</li>
+            <li>Hans Leybold</li>
+            <li>Eva Horn</li>
+            <li>Anna Konzett</li>
+            <li>Alexander Reinalter</li>
+            <li>Tanja Kogler</li>
+            <li>Bettina Steinmann</li>
+          </ul>
+        </div>
+
+        <div class="register-block">
+          <h3>Kontrabass</h3>
+          <ul>
+            <li><span class="ph">[Namen – bitte ergänzen]</span></li>
+          </ul>
+        </div>
+
         <div class="register-block">
           <h3>Holzbläser</h3>
           <ul>
-            <li>Flöte</li>
-            <li>Oboe</li>
-            <li>Klarinette</li>
-            <li>Fagott</li>
+            <li><span class="ph">Flöte – [Namen]</span></li>
+            <li><span class="ph">Oboe – [Namen]</span></li>
+            <li><span class="ph">Klarinette – [Namen]</span></li>
+            <li><span class="ph">Fagott – [Namen]</span></li>
           </ul>
         </div>
+
         <div class="register-block">
           <h3>Blechbläser</h3>
           <ul>
-            <li>Horn</li>
-            <li>Trompete</li>
-            <li>Posaune</li>
-            <li>Tuba</li>
+            <li><span class="ph">Horn – [Namen]</span></li>
+            <li><span class="ph">Trompete – [Namen]</span></li>
+            <li><span class="ph">Posaune – [Namen]</span></li>
           </ul>
         </div>
+
         <div class="register-block">
-          <h3>Schlagwerk &amp; Klavier</h3>
+          <h3>Schlagwerk</h3>
           <ul>
-            <li>Pauken</li>
-            <li>Schlagzeug</li>
-            <li>Klavier / Cembalo</li>
+            <li><span class="ph">Pauken / Schlagzeug – [Namen]</span></li>
           </ul>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════
-       MUSIKERPROFILE
-  ══════════════════════════════════════════════ -->
-  <section class="section" aria-labelledby="musiker-heading">
-    <div class="container">
-      <div class="sec-head">
-        <span class="sec-eye">Porträts</span>
-        <h2 class="sec-title" id="musiker-heading">Unsere Musikerinnen &amp; Musiker</h2>
-        <p class="sec-lead">
-          Ausgewählte Mitglieder stellen sich vor.
-          Nicht alle Profile liegen derzeit vollständig vor –
-          sie werden schrittweise ergänzt.
-        </p>
-      </div>
-
-      <div class="musicians-grid">
-
-        <!-- Profil 1 -->
-        <div class="musician-card">
-          <div class="musician-card__photo" aria-label="Foto Platzhalter">
-            <span class="ph" style="font-style:normal; font-size:0.68rem; text-align:center;">Foto<br><span class="ph">[Name]</span></span>
-          </div>
-          <p class="musician-card__name"><span class="ph">[Name]</span></p>
-          <p class="musician-card__inst"><span class="ph">[Instrument]</span></p>
-        </div>
-
-        <!-- Profil 2 -->
-        <div class="musician-card">
-          <div class="musician-card__photo" aria-label="Foto Platzhalter">
-            <span class="ph" style="font-style:normal; font-size:0.68rem; text-align:center;">Foto<br><span class="ph">[Name]</span></span>
-          </div>
-          <p class="musician-card__name"><span class="ph">[Name]</span></p>
-          <p class="musician-card__inst"><span class="ph">[Instrument]</span></p>
-        </div>
-
-        <!-- Profil 3 -->
-        <div class="musician-card">
-          <div class="musician-card__photo" aria-label="Foto Platzhalter">
-            <span class="ph" style="font-style:normal; font-size:0.68rem; text-align:center;">Foto<br><span class="ph">[Name]</span></span>
-          </div>
-          <p class="musician-card__name"><span class="ph">[Name]</span></p>
-          <p class="musician-card__inst"><span class="ph">[Instrument]</span></p>
-        </div>
-
-        <!-- Profil 4 -->
-        <div class="musician-card">
-          <div class="musician-card__photo" aria-label="Foto Platzhalter">
-            <span class="ph" style="font-style:normal; font-size:0.68rem; text-align:center;">Foto<br><span class="ph">[Name]</span></span>
-          </div>
-          <p class="musician-card__name"><span class="ph">[Name]</span></p>
-          <p class="musician-card__inst"><span class="ph">[Instrument]</span></p>
-        </div>
 
       </div>
 
-      <p style="margin-top:3rem; font-size:0.875rem; color:var(--muted);">
-        Alle weiteren Mitglieder werden nach Rücksprache hier vorgestellt.
-        Fotos: <span class="ph">[Fotograf, z. B. © Martin Ender]</span>
+      <p style="margin-top:3rem;font-size:0.875rem;color:var(--muted);">
+        Nicht alle Register sind vollständig erfasst. Fehlende Namen bitte beim Vorstand melden. Fotos: <span class="ph">[© Martin Ender und andere – Rechte bitte klären]</span>
       </p>
+
+      <div style="margin-top:2rem;">
+        <a href="mitmachen.html" class="btn btn--primary">Jetzt mitspielen</a>
+      </div>
     </div>
   </section>
 
@@ -222,7 +240,7 @@
       </div>
       <div class="footer__col"><h4>Konzert</h4><ul><li><a href="konzert.html">Frühjahr 2026</a></li><li><a href="archiv.html">Archiv</a></li><li><a href="presse.html">Pressestimmen</a></li></ul></div>
       <div class="footer__col"><h4>Verein</h4><ul><li><a href="verein.html">Geschichte</a></li><li><a href="orchester.html">Orchester</a></li><li><a href="mitmachen.html">Mitmachen</a></li></ul></div>
-      <div class="footer__col"><h4>Info</h4><ul><li><a href="kontakt.html">Kontakt</a></li><li><a href="#">Datenschutz</a></li><li><a href="#">Impressum</a></li></ul></div>
+      <div class="footer__col"><h4>Info</h4><ul><li><a href="kontakt.html">Kontakt</a></li><li><a href="datenschutz.html">Datenschutz</a></li><li><a href="impressum.html">Impressum</a></li></ul></div>
     </div>
     <div class="footer__bottom">
       <span>© 2026 Gesellschaft der Musikfreunde Bregenz</span>
@@ -230,14 +248,9 @@
     </div>
   </div>
 </footer>
-
 <script>
-  const toggle = document.getElementById('nav-toggle');
-  const links  = document.getElementById('nav-links');
-  toggle.addEventListener('click', function () {
-    const open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-  });
+  const toggle=document.getElementById('nav-toggle'),links=document.getElementById('nav-links');
+  toggle.addEventListener('click',function(){const o=links.classList.toggle('open');toggle.setAttribute('aria-expanded',o);});
 </script>
 </body>
 </html>

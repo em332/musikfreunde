@@ -14,15 +14,19 @@ musikfreunde/
 ├── konzert.html        ← Aktuelles Konzert (wichtigster Update-Zielpunkt)
 ├── verein.html         ← Vereinsgeschichte, Vorstand, Sponsoren
 ├── orchester.html      ← Orchesterprofil, Register, Musikerporträts
+├── obfrau.html         ← Profil Dr. Anita Einsle (Obfrau)
 ├── mitmachen.html      ← Einladung neue Mitglieder, Probenplan
 ├── archiv.html         ← Vergangene Konzerte
-├── presse.html         ← Pressestimmen
+├── presse.html         ← Pressestimmen (mit PDF-Links zur alten Site)
 ├── kontakt.html        ← Kontaktinformationen
+├── impressum.html      ← Impressum (§ 25 MedienG, § 5 ECG)
+├── datenschutz.html    ← Datenschutzerklärung (DSGVO)
 ├── css/
 │   └── style.css       ← Einziges Stylesheet, alle Komponenten
 └── vorlagen/
     ├── Inhalt Homepage.pdf                       ← Inhaltsanforderungen
-    └── Folder_frühjahr26_Musikfreunde_klein.pdf  ← CI-Referenz (Folder Frühjahr 2026)
+    ├── Folder_frühjahr26_Musikfreunde_klein.pdf  ← CI-Referenz (Folder Frühjahr 2026)
+    └── anita-einsle.png                          ← Foto Dr. Anita Einsle (lokal)
 ```
 
 Kein Build-Schritt, kein Framework. Seiten direkt im Browser öffnen.
@@ -86,44 +90,69 @@ grep -n 'class="ph"' *.html
 |------|------|
 | Organisation | Gesellschaft der Musikfreunde Bregenz |
 | ZVR | 399280347 |
-| Mitgliedschaft | Europäische Orchester Vereinigung |
-| Frühjahrskonzert | 9. Mai 2026, Theater am Kornmarkt, Bregenz |
-| Programm | Mozart: Ouv. Don Giovanni KV 527 · Mozart: Klavierkonzert KV 414 · Beethoven: Sinfonie Nr. 6 «Pastorale» |
+| Gegründet | 1907 |
+| Mitgliedschaft | Europäische Orchester Vereinigung (EOV), seit Juni 2006 |
+| Einzugsgebiet | Bregenz, Vorarlberg, Lindau (D) |
+| Obfrau | Dr. Anita Einsle, M.B.L. · Tel. 05574/54447 · anita@einsle.at |
+| Dirigent | Hansjörg Gruber (seit 2002) |
+| Konzertmeister | Thomas Furrer (geb. 1957, Wetzikon/CH) |
+| Frühjahrskonzert | 9. Mai 2026, 19:30 Uhr, Theater am Kornmarkt, Bregenz |
+| Programm | Mozart: Ouv. Don Giovanni KV 527 · Mozart: Klavierkonzert KV 414 · Beethoven: Sinfonie Nr. 6 |
 | Solist | Tobias Jakob (Klavier) |
 | Herbstkonzert | 7. November 2026, Pfarrkirche St. Gallus, Bregenz |
-| Letztes Konzert | 8. November 2025 |
-| Sponsoren | Hypo Vorarlberg · Burtscher Bau · RA Dr. Einsle |
-| Pressemedien | Vorarlberger Nachrichten (VN) · Kulturmagazin Vorarlberg |
+| Probenlokal | Volksschule Augasse (Untergeschoss), Eingang Klostergasse, Bregenz |
+| Probenzeit | Montags 19:45–22:00 Uhr (Saison Feb–Juni) |
+| Förderer | Stadt Bregenz · Land Vorarlberg · Hypo Vorarlberg · Burtscher Bau · RA Dr. Einsle |
+| Pressedienst | Vorarlberger Nachrichten (VN) · Zeitschrift Kultur |
 | Fotografie | © Martin Ender |
+
+## Fotos (externe URLs, alte Website)
+
+Fotos von der alten Homepage werden direkt per URL eingebunden (für Prototyp ausreichend, vor Go-live lokal hosten):
+- Hansjörg Gruber: `http://www.musikfreunde-bregenz.at/wp-content/uploads/2009/02/gruber_41.jpg`
+- Thomas Furrer: `http://www.musikfreunde-bregenz.at/wp-content/uploads/2009/02/furrer1.jpg`
+- Dr. Anita Einsle: `vorlagen/anita-einsle.png` (lokal)
+
+## Pressestimmen (PDF-Links)
+
+Alle Berichte liegen als PDF vor und werden direkt von der alten Site verlinkt:
+- VN 10.11.2025 – `.../uploads/2025/11/uber-dem-nebelmeer.pdf`
+- Kultur 2025 – `.../uploads/2025/11/aus-freude-an-der-musik.pdf`
+- VN 16.11.2024 – `.../uploads/2024/11/konzertkritik-vn-24-11-16.pdf`
+- VN 18.11.2019 – `.../uploads/2019/11/kritik-vn-2019-11-18.pdf`
+- VN 14.05.2019 – `.../uploads/2019/05/kritik-vn-2019-05-14.pdf`
+- VN 20.11.2018 – `.../uploads/2018/11/kritik-vn-2018-11-20.pdf`
+- VN 18.06.2018 – `.../uploads/2018/06/kritik-vn-2018-06-18.pdf`
+- VN 20.11.2017 – `.../uploads/2017/11/vn-2017-11-20.pdf`
+- VN 15.05.2017 – `.../uploads/2017/05/vn-2017-05-15.pdf`
 
 ## Offene Punkte vor Go-live
 
 **Vom Vorstand einzuholen:**
-- Gründungsjahr und Vereinsgeschichte
-- Namen und Funktionen aller Vorstandsmitglieder
-- Probenlokal (Adresse, Wochentag, Uhrzeit)
+- Übrige Vorstandsmitglieder (Namen + Funktionen – Obfrau Dr. Einsle ist bereits eingetragen)
 - Mitgliedsbeitrag (regulär + ermässigt)
-- Vereinsadresse und offizielle E-Mail-Adressen
-- Instagram- und Facebook-URLs
+- Welche Instrumente/Stimmen werden aktuell gesucht (`mitmachen.html`)
+- Fehlende Register-Namen: Kontrabass, Holzbläser, Blechbläser, Schlagwerk (`orchester.html`)
+- Instagram- und Facebook-URLs (alle Seiten, Footer)
+- Vereinspostadresse (falls abweichend von Kanzlei Deuringstraße 9)
 
 **Für die Konzertseite:**
-- Uhrzeit des Konzerts (9. Mai 2026)
-- Ticketpreise
-- Direktlink zum Tourismusamt Bregenz (Kartenverkauf)
-- Biografie Tobias Jakob (vom Künstler oder Veranstalter)
-- Dirigent: Name + Biografie + Foto
+- Ticketpreise + Direktlink zum Tourismusamt Bregenz
+- Biografie Tobias Jakob (Solist)
 
 **Inhalte ergänzen:**
-- Musikerprofile: Namen, Instrumente, Fotos (nach Rücksprache mit Mitgliedern)
-- Pressezitate: konkrete Zitatstexte aus VN und Kulturmagazin
-- Archiv-Einträge: Konzerte vor November 2025
+- Vereinsgeschichte: Detailtext für `verein.html` (Abschnitt «Weitere Vereinsgeschichte»)
+- Archiv: Konzertprogramme vor November 2025 in `archiv.html` eintragen
+- Pressestimmen: Archiveinträge vor 2017 ergänzen (falls vorhanden)
 
 **Technisch:**
-- Newsletter-Formular in `index.html` durch echtes Backend ersetzen (z. B. Mailchimp Embedded Form)
-- Datenschutz- und Impressumsseiten erstellen (österreichisches Recht)
-- Reale Fotos (© Martin Ender) einbinden und Bildpfade setzen
-- Google Fonts lokal hosten (optional, für Offline-Robustheit)
-- `href="#"` in Sponsoren-Links und Social-Media-Links durch echte URLs ersetzen
+- Newsletter-Formular in `index.html` durch echtes Backend ersetzen (z. B. Mailchimp Embedded Form → dann auch `datenschutz.html` Abschnitt 5 ergänzen)
+- Fotos von alter Website lokal hosten (statt externer URLs auf musikfreunde-bregenz.at)
+- Google Fonts optional lokal hosten (für Datenschutz + Offline-Robustheit, → `datenschutz.html` Abschnitt 4 anpassen)
+- Weitere Orchesterfotos (© Martin Ender) einbinden
+- Impressum: Fotocredit ergänzen
+- Sponsoren-Links: echte URLs eintragen
+- Social-Media-Links: echte URLs eintragen
 
 ## Quellmaterialien
 
