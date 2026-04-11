@@ -169,11 +169,11 @@ p  { font-size: clamp(0.9375rem, 1.5vw, 1.0625rem); max-width: 65ch; }
   pointer-events: none;
 }
 .hero__deco {
-  position: absolute; bottom: -4rem; right: 2rem;
+  position: absolute; top: 10%; right: 8rem;
   pointer-events: none; user-select: none;
 }
 .hero__deco img {
-  height: 36rem; width: auto; opacity: 0.14; filter: invert(1);
+  height: 30rem; width: auto; opacity: 0.14; filter: invert(1);
 }
 .hero__content {
   position: relative; z-index: 1; max-width: var(--max-w); width: 100%;
@@ -407,6 +407,42 @@ p  { font-size: clamp(0.9375rem, 1.5vw, 1.0625rem); max-width: 65ch; }
 .prog-item__sub { font-size: 0.9rem; color: var(--muted); }
 .prog-item__solist { font-size: 0.875rem; color: var(--text); margin-top: 0.5rem; }
 .prog-item__solist strong { color: var(--red); font-weight: 600; }
+
+/* Accordion / Klapptext */
+.prog-detail { margin-top: 0.75rem; }
+.prog-detail summary {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.8rem; font-weight: 600; color: var(--red);
+  cursor: pointer; list-style: none; user-select: none;
+  letter-spacing: 0.04em;
+}
+.prog-detail summary::-webkit-details-marker { display: none; }
+.prog-detail summary::after {
+  content: '▾'; font-size: 0.75rem; transition: transform 0.2s;
+}
+.prog-detail[open] summary::after { transform: rotate(-180deg); }
+.prog-detail__body {
+  margin-top: 0.875rem; padding-top: 0.875rem;
+  border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 0.75rem;
+}
+.prog-detail__body p { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+.prog-detail__body .prog-satz {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text); margin-bottom: 0.1rem;
+}
+
+/* Sponsor-Grid */
+.sponsor-grid {
+  display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;
+  margin-top: 2.5rem;
+}
+.sponsor-item {
+  background: #fff; border: 1px solid var(--border);
+  padding: 0.875rem 1.5rem; font-family: var(--sans);
+  font-size: 0.875rem; font-weight: 600; color: var(--muted);
+  letter-spacing: 0.02em; white-space: nowrap;
+}
 
 .solist-card {
   display: grid; grid-template-columns: 110px 1fr; gap: 2rem;

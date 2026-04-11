@@ -155,6 +155,10 @@ Alle Berichte liegen als PDF vor und werden direkt von der alten Site verlinkt:
 - Herbstkonzert-Vorschau: 7. November 2026, Pfarrkirche St. Gallus
 - Datenschutzerklärung (DSGVO) und Impressum vollständig
 - Gründungsjahr-Platzhalter in `index.html` (Hero) mit «1907» befüllt
+- Eintrittspreise eingetragen: € 24,–/26,–/28,–/30,– · Senior:innen € 2,– Rabatt · Schüler:innen/Student:innen € 16,–
+- Ticketlink: https://tickets.visitbregenz.com
+- Klapptext («Weiterlesen») für alle drei Programmwerke mit Foldertext ergänzt (`<details>/<summary>`)
+- Sponsorenbereich am Ende von `konzert.html` ergänzt (Text-Kacheln; Logos ausstehend)
 - **Notenschlüssel** (`img/notenschluessel.png`) aus EPS-Quelldatei extrahiert und in alle 11 Seiten integriert:
   Nav-Logo, Hero (Startseite, 36rem weiss), page-hero (Unterseiten, 16rem weiss)
 - **CI-Farbe** auf Basis Folder Frühjahr 2026 angepasst: `--red` von `#B5192E` → `#B34938` (warmes Terrakotta)
@@ -172,8 +176,8 @@ Alle Berichte liegen als PDF vor und werden direkt von der alten Site verlinkt:
 - Vereinspostadresse (falls abweichend von Kanzlei Deuringstraße 9)
 
 **Für die Konzertseite:**
-- Ticketpreise + Direktlink zum Tourismusamt Bregenz
 - Foto Tobias Jacob (solist-card__img in `konzert.html` ist noch Platzhalter)
+- Sponsor-Logos: aktuell als Text-Kacheln dargestellt; echte Logos vom Vorstand/Sponsor einfordern und als `img/sponsor-*.png` einbinden
 
 **Inhalte ergänzen:**
 - Vereinsgeschichte: Detailtext für `verein.html` (Abschnitt «Weitere Vereinsgeschichte»)
