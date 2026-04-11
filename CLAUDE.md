@@ -23,9 +23,13 @@ musikfreunde/
 ├── datenschutz.html    ← Datenschutzerklärung (DSGVO)
 ├── css/
 │   └── style.css       ← Einziges Stylesheet, alle Komponenten
+├── img/
+│   └── notenschluessel.png  ← Vereins-Notenschlüssel, 600×1000px, transparenter Hintergrund
 └── vorlagen/
     ├── Inhalt Homepage.pdf                       ← Inhaltsanforderungen
     ├── Folder_frühjahr26_Musikfreunde_klein.pdf  ← CI-Referenz (Folder Frühjahr 2026)
+    ├── Unbenannt-292.eps                         ← Originalquelle Notenschlüssel (EPS/PostScript)
+    ├── notenschluessel_transparent.png           ← Zwischenschritt (Originalausrichtung, Spirale oben)
     └── anita-einsle.png                          ← Foto Dr. Anita Einsle (lokal)
 ```
 
@@ -33,7 +37,7 @@ Kein Build-Schritt, kein Framework. Seiten direkt im Browser öffnen.
 
 ## Wichtige Architektur-Hinweise
 
-**Nav und Footer sind in jeder HTML-Datei manuell dupliziert** – es gibt kein Templating. Wenn Navigation oder Footer geändert werden, müssen alle 8 HTML-Dateien aktualisiert werden. Das `active`-Attribut im Nav (`class="active"`) ist jeweils auf den Link der aktuellen Seite gesetzt.
+**Nav und Footer sind in jeder HTML-Datei manuell dupliziert** – es gibt kein Templating. Wenn Navigation oder Footer geändert werden, müssen alle 11 HTML-Dateien aktualisiert werden. Das `active`-Attribut im Nav (`class="active"`) ist jeweils auf den Link der aktuellen Seite gesetzt.
 
 **Google Fonts-Abhängigkeit:** `css/style.css` lädt Playfair Display und Inter via `@import url('https://fonts.googleapis.com/...')`. Ohne Internetverbindung fallen die Seiten auf System-Schriften zurück (Georgia / -apple-system). Für den Produktionsbetrieb empfiehlt sich ein lokales Font-Hosting.
 
@@ -61,15 +65,23 @@ Nach dem Update von `konzert.html` sind auch folgende Stellen in `index.html` an
 
 Definiert als CSS Custom Properties in `css/style.css`:
 
-| Variable    | Wert              | Verwendung                             |
-|-------------|-------------------|----------------------------------------|
-| `--red`     | `#B5192E`         | Akzent: Eyebrows, CTAs, Dekorationen   |
-| `--text`    | `#1C1C1C`         | Fliesstext                             |
-| `--muted`   | `#6A6A6A`         | Sekundärtext, Labels                   |
-| `--bg-warm` | `#F7F6F2`         | Sektionshintergründe, Karten           |
-| `--bg-dark` | `#141414`         | Hero-Sektionen, Footer                 |
-| `--serif`   | Playfair Display  | Überschriften, Werktitel (kursiv)      |
-| `--sans`    | Inter             | Fliesstext, Labels, Navigation         |
+| Variable     | Wert              | Verwendung                                        |
+|--------------|-------------------|---------------------------------------------------|
+| `--red`      | `#B34938`         | Akzent: Eyebrows, CTAs, Dekorationen (Terrakotta, aus Folder-CI extrahiert) |
+| `--red-dark` | `#8A3229`         | Hover-Zustand, dunklerer Akzent                   |
+| `--text`     | `#1C1C1C`         | Fliesstext                                        |
+| `--muted`    | `#6A6A6A`         | Sekundärtext, Labels                              |
+| `--bg-warm`  | `#F7F6F2`         | Sektionshintergründe, Karten                      |
+| `--bg-dark`  | `#141414`         | Hero-Sektionen, Footer                            |
+| `--serif`    | Playfair Display  | Überschriften, Werktitel (kursiv)                 |
+| `--sans`     | Inter             | Fliesstext, Labels, Navigation                    |
+
+**Notenschlüssel-Dekorationen:**
+- Nav-Logo: `<img src="img/notenschluessel.png" class="nav__logo__clef">` (Höhe 34px, `height: 34px; width: auto`)
+- Startseite Hero: `.hero__deco img` (Höhe 36rem, `opacity: 0.14; filter: invert(1)` → weiss auf dunkel)
+- Unterseiten page-hero: `.page-hero__deco img` (Höhe 16rem, `opacity: 0.18; filter: invert(1)` → weiss auf dunkel)
+
+**Notenschlüssel-Ausrichtung:** Spirale (Kugel) unten links, Stiel geht nach oben, Dach verläuft von links oben nach rechts unten. Die Quelldatei `vorlagen/notenschluessel_transparent.png` hat Spirale oben – für `img/notenschluessel.png` wurde `FLIP_TOP_BOTTOM` (vertikaler Spiegelung, kein 180°-Drehen) angewendet.
 
 Das Rot wird sparsam eingesetzt (nur bei echten Schwerpunkten). Keine dekorativen Effekte ohne funktionalen Mehrwert.
 
@@ -98,7 +110,7 @@ grep -n 'class="ph"' *.html
 | Konzertmeister | Thomas Furrer (geb. 1957, Wetzikon/CH) |
 | Frühjahrskonzert | 9. Mai 2026, 19:30 Uhr, Theater am Kornmarkt, Bregenz |
 | Programm | Mozart: Ouv. Don Giovanni KV 527 · Mozart: Klavierkonzert KV 414 · Beethoven: Sinfonie Nr. 6 |
-| Solist | Tobias Jakob (Klavier) |
+| Solist | Tobias Jacob (Klavier) — **Schreibung: ein b**, so im offiziellen Konzertfolder |
 | Herbstkonzert | 7. November 2026, Pfarrkirche St. Gallus, Bregenz |
 | Probenlokal | Volksschule Augasse (Untergeschoss), Eingang Klostergasse, Bregenz |
 | Probenzeit | Montags 19:45–22:00 Uhr (Saison Feb–Juni) |
@@ -126,6 +138,29 @@ Alle Berichte liegen als PDF vor und werden direkt von der alten Site verlinkt:
 - VN 20.11.2017 – `.../uploads/2017/11/vn-2017-11-20.pdf`
 - VN 15.05.2017 – `.../uploads/2017/05/vn-2017-05-15.pdf`
 
+## Erledigtes (Stand April 2026)
+
+- Vollständiger Prototyp: 11 HTML-Seiten + CSS erstellt
+- Vereinsdaten eingebaut: Gründungsjahr 1907, ZVR, EOV-Mitgliedschaft seit 2006
+- Obfrau: Dr. Anita Einsle vollständig eingetragen (Tel., E-Mail, Adresse, Foto lokal)
+- Dirigent Hansjörg Gruber: Biografie + Foto (externe URL) eingebunden
+- Konzertmeister Thomas Furrer: Biografie + Foto (externe URL) eingebunden
+- Frühjahrskonzert 2026: Datum, Uhrzeit, Ort, Programm vollständig
+- Solist **Tobias Jacob**: Biografie (3 Absätze, aus Konzertfolder extrahiert) eingebaut
+  — Schreibung «Jacob» (ein b) aus offiziellem Folder übernommen; in `konzert.html` und `index.html` korrigiert
+- Probenplan Frühjahr 2026 vollständig (Montags 19:45–22:00, VS Augasse)
+- Streicherlisten vollständig (1.+2. Violine, Viola, Cello)
+- 9 Presseartikel mit direkten PDF-Links eingebunden (VN 2017–2025, Zeitschrift Kultur)
+- Förderer: Stadt Bregenz, Land Vorarlberg, Hypo Vorarlberg, Burtscher Bau, RA Dr. Einsle
+- Herbstkonzert-Vorschau: 7. November 2026, Pfarrkirche St. Gallus
+- Datenschutzerklärung (DSGVO) und Impressum vollständig
+- Gründungsjahr-Platzhalter in `index.html` (Hero) mit «1907» befüllt
+- **Notenschlüssel** (`img/notenschluessel.png`) aus EPS-Quelldatei extrahiert und in alle 11 Seiten integriert:
+  Nav-Logo, Hero (Startseite, 36rem weiss), page-hero (Unterseiten, 16rem weiss)
+- **CI-Farbe** auf Basis Folder Frühjahr 2026 angepasst: `--red` von `#B5192E` → `#B34938` (warmes Terrakotta)
+- **Nav CTA „Konzert 2026"**: `white-space: nowrap` verhindert Zeilenumbruch im Button
+- **Platzhalter in Buttons**: `.btn .ph { color: #fff; }` — dunkle Platzhaltertexte auf rotem Hintergrund lesbar
+
 ## Offene Punkte vor Go-live
 
 **Vom Vorstand einzuholen:**
@@ -138,7 +173,7 @@ Alle Berichte liegen als PDF vor und werden direkt von der alten Site verlinkt:
 
 **Für die Konzertseite:**
 - Ticketpreise + Direktlink zum Tourismusamt Bregenz
-- Biografie Tobias Jakob (Solist)
+- Foto Tobias Jacob (solist-card__img in `konzert.html` ist noch Platzhalter)
 
 **Inhalte ergänzen:**
 - Vereinsgeschichte: Detailtext für `verein.html` (Abschnitt «Weitere Vereinsgeschichte»)
